@@ -27,6 +27,7 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Literals](#literals)
 * [CGRect Functions](#cgrect-functions)
 * [Constants](#constants)
+* [Macros](#macros)
 * [Enumerated Types](#enumerated-types)
 * [Bitmasks](#bitmasks)
 * [Private Properties](#private-properties)
@@ -322,7 +323,7 @@ CGFloat height = frame.size.height;
 
 ## Constants
 
-Constants are preferred over in-line string literals or numbers, as they allow for easy reproduction of commonly used variables and can be quickly changed without the need for find and replace. Constants should be declared as `static` constants and not `#define`s unless explicitly being used as a macro.
+Constants are preferred over in-line string literals or numbers, as they allow for easy reproduction of commonly used variables and can be quickly changed without the need for find and replace. Constants should be declared as `static` constants and not `#define`s.
 
 **For example:**
 
@@ -338,6 +339,24 @@ static const CGFloat NYTImageThumbnailHeight = 50.0;
 #define CompanyName @"The New York Times Company"
 
 #define thumbnailHeight 2
+```
+
+## Macros
+
+Class methods should be used instead of preprocessor macros, as these can break forwards compatibility with Swift code.
+
+**For example:**
+
+```objc
++(int) maxOf:(int)x and:(int)y {
+    return x > y ? x : y;
+}
+```
+
+**Not:**
+
+```objc
+#define MAX(x, y) x > y ? x : y
 ```
 
 ## Enumerated Types

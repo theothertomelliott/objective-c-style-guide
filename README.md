@@ -436,6 +436,7 @@ _Text and example taken from the [Cocoa Naming Guidelines](https://developer.app
 ## Singletons
 
 Singleton objects should use a thread-safe pattern for creating their shared instance.
+
 ```objc
 + (instancetype)sharedInstance {
    static id sharedInstance = nil;

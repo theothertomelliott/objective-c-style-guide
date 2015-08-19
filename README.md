@@ -36,6 +36,7 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Singletons](#singletons)
 * [Imports](#imports)
 * [Xcode Project](#xcode-project)
+* [Git](#git)
 
 ## Dot Notation Syntax
 
@@ -493,6 +494,10 @@ Note: For modules use the [@import](http://clang.llvm.org/docs/Modules.html#usin
 The physical files should be kept in sync with the Xcode project files in order to avoid file sprawl. Any Xcode groups created should be reflected by folders in the filesystem. Code should be grouped not only by type, but also by feature for greater clarity.
 
 When possible, always turn on “Treat Warnings as Errors” in the target’s Build Settings and enable as many [additional warnings](http://boredzo.org/blog/archives/2009-11-07/warnings) as possible. If you need to ignore a specific warning, use [Clang’s pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas).
+
+## Git
+
+If using Git for source control, use the [.gitignore file provided by GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore) to ensure that user-specific files are not committed to your main repo.
 
 # Other Objective-C Style Guides
 
